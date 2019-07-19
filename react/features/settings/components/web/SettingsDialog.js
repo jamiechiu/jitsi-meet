@@ -131,7 +131,7 @@ function _mapStateToProps(state) {
     // The settings sections to display.
     const showDeviceSettings = configuredTabs.includes('devices');
     const moreTabProps = getMoreTabProps(state);
-    const { showModeratorSettings, showLanguageSettings } = moreTabProps;
+    const { showModeratorSettings } = moreTabProps;
     const showProfileSettings
         = configuredTabs.includes('profile') && jwt.isGuest;
     const showCalendarSettings
@@ -184,7 +184,7 @@ function _mapStateToProps(state) {
         });
     }
 
-    if (showModeratorSettings || showLanguageSettings) {
+    if (showModeratorSettings) {
         tabs.push({
             name: SETTINGS_TABS.MORE,
             component: MoreTab,
@@ -195,7 +195,6 @@ function _mapStateToProps(state) {
 
                 return {
                     ...newProps,
-                    currentLanguage: tabState.currentLanguage,
                     followMeEnabled: tabState.followMeEnabled,
                     startAudioMuted: tabState.startAudioMuted,
                     startVideoMuted: tabState.startVideoMuted

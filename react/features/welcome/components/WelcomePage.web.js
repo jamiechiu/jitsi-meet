@@ -138,30 +138,6 @@ class WelcomePage extends AbstractWelcomePage {
                                 { app: APP_NAME }) }
                         </p>
                     </div>
-                    <div id = 'enter_room'>
-                        <div className = 'enter-room-input-container'>
-                            <div className = 'enter-room-title'>
-                                { t('welcomepage.enterRoomTitle') }
-                            </div>
-                            <form onSubmit = { this._onFormSubmit }>
-                                <input
-                                    autoFocus = { true }
-                                    className = 'enter-room-input'
-                                    id = 'enter_room_field'
-                                    onChange = { this._onRoomChange }
-                                    placeholder
-                                        = { this.state.roomPlaceholder }
-                                    type = 'text'
-                                    value = { this.state.room } />
-                            </form>
-                        </div>
-                        <div
-                            className = 'welcome-page-button'
-                            id = 'enter_room_button'
-                            onClick = { this._onJoin }>
-                            { t('welcomepage.go') }
-                        </div>
-                    </div>
                     { this._renderTabs() }
                 </div>
                 { showAdditionalContent
