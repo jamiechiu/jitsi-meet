@@ -17,7 +17,7 @@ var interfaceConfig = {
     DEFAULT_REMOTE_DISPLAY_NAME: 'Meeting Participant',
     DEFAULT_LOCAL_DISPLAY_NAME: 'me',
     SHOW_JITSI_WATERMARK: false,
-    JITSI_WATERMARK_LINK: 'https://jitsi.org',
+    JITSI_WATERMARK_LINK: 'https://meet.jamiechiu.com',
 
     // if watermark is disabled by default, it can be shown only for guests
     SHOW_WATERMARK_FOR_GUESTS: false,
@@ -27,9 +27,9 @@ var interfaceConfig = {
     SHOW_DEEP_LINKING_IMAGE: false,
     GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
     DISPLAY_WELCOME_PAGE_CONTENT: false,
-    APP_NAME: 'Meeting',
-    NATIVE_APP_NAME: 'Meeting',
-    PROVIDER_NAME: 'Meeting',
+    APP_NAME: 'Meeting with Dr. Jamie Chiu',
+    NATIVE_APP_NAME: 'Meeting with Dr. Jamie Chiu',
+    PROVIDER_NAME: 'Meeting with Dr. Jamie Chiu',
     LANG_DETECTION: false, // Allow i18n to detect the system language
     INVITATION_POWERED_BY: false,
 

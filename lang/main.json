@@ -31,7 +31,7 @@
     },
     "calendarSync": {
         "addMeetingURL": "Add a meeting link",
-        "confirmAddLink": "Do you want to add a Jitsi link to this event?",
+        "confirmAddLink": "Do you want to add a link to this event?",
         "confirmAddLinkTitle": "Calendar",
         "error": {
             "appConfiguration": "Calendar integration is not properly configured.",
@@ -306,7 +306,7 @@
         "answer": "Answer",
         "audioCallTitle": "Incoming call",
         "decline": "Dismiss",
-        "productLabel": "from Jitsi Meet",
+        "productLabel": "from Dr. Jamie Chiu",
         "videoCallTitle": "Incoming video call"
     },
     "info": {
@@ -336,7 +336,7 @@
         "numbers": "Dial-in Numbers",
         "password": "$t(lockRoomPasswordUppercase):",
         "title": "Share",
-        "tooltip": "Share link and dial-in info for this meeting",
+        "tooltip": "Share link for this meeting",
         "label": "Meeting info"
     },
     "inviteDialog": {
