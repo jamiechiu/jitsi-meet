@@ -747,7 +747,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "Fully encrypted video conference solution using the latest WebRTC protocols.",
+        "appDescription": "Fully encrypted and using the latest WebRTC protocols.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
