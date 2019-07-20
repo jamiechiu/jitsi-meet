@@ -15,6 +15,8 @@ import {
 
 declare var APP: Object;
 
+/* eslint-disable no-unused-vars, no-var */
+
 /**
  * The type of the React {@code Component} props of {@link ProfileTab}.
  */
@@ -103,21 +105,6 @@ class ProfileTab extends AbstractDialogTab<Props> {
                             shouldFitContainer = { true }
                             type = 'text'
                             value = { displayName } />
-                    </div>
-                    <div className = 'profile-edit-field'>
-                        <FieldTextStateless
-                            compact = { true }
-                            id = 'setEmail'
-                            label = { t('profile.setEmailLabel') }
-                            // eslint-disable-next-line react/jsx-no-bind
-                            onChange = {
-                                ({ target: { value } }) =>
-                                    super._onChange({ email: value })
-                            }
-                            placeholder = { t('profile.setEmailInput') }
-                            shouldFitContainer = { true }
-                            type = 'text'
-                            value = { email } />
                     </div>
                 </div>
                 { authEnabled && this._renderAuth() }

@@ -1,5 +1,6 @@
 /* global interfaceConfig */
 
+/* eslint-disable no-unused-vars, no-var */
 import React from 'react';
 
 import { translate } from '../../base/i18n';
@@ -120,9 +121,6 @@ class WelcomePage extends AbstractWelcomePage {
                 className = { `welcome ${showAdditionalContent
                     ? 'with-content' : 'without-content'}` }
                 id = 'welcome_page'>
-                <div className = 'welcome-watermark'>
-                    <Watermarks />
-                </div>
                 <div className = 'header'>
                     <div className = 'welcome-page-settings'>
                         <SettingsButton
@@ -195,34 +193,7 @@ class WelcomePage extends AbstractWelcomePage {
      * @returns {ReactElement|null}
      */
     _renderTabs() {
-        const isMobileBrowser
-            = Platform.OS === 'android' || Platform.OS === 'ios';
-
-        if (isMobileBrowser) {
-            return null;
-        }
-
-        const { _calendarEnabled, t } = this.props;
-
-        const tabs = [];
-
-        if (_calendarEnabled) {
-            tabs.push({
-                label: t('welcomepage.calendar'),
-                content: <CalendarList />
-            });
-        }
-
-        tabs.push({
-            label: t('welcomepage.recentList'),
-            content: <RecentList />
-        });
-
-        return (
-            <Tabs
-                onSelect = { this._onTabSelected }
-                selected = { this.state.selectedTab }
-                tabs = { tabs } />);
+        return null;
     }
 
     /**

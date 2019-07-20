@@ -9,7 +9,7 @@ var interfaceConfig = {
      * Whether or not the blurred video background for large video should be
      * displayed on browsers that can support it.
      */
-    DISABLE_VIDEO_BACKGROUND: false,
+    DISABLE_VIDEO_BACKGROUND: true,
 
     INITIAL_TOOLBAR_TIMEOUT: 20000,
     TOOLBAR_TIMEOUT: 4000,
@@ -36,7 +36,7 @@ var interfaceConfig = {
     /**
      * If we should show authentication block in profile
      */
-    AUTHENTICATION_ENABLE: true,
+    AUTHENTICATION_ENABLE: false,
 
     /**
      * The name of the toolbar buttons to display in the toolbar. If present,
@@ -48,12 +48,12 @@ var interfaceConfig = {
     TOOLBAR_BUTTONS: [
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'info', 'chat', 'recording',
-        'etherpad', 'sharedvideo', 'settings', 'raisehand',
+        'etherpad', 'settings', 'raisehand',
         'videoquality', 'filmstrip', 'invite', 'stats', 'shortcuts',
-        'tileview', 'videobackgroundblur'
+        'tileview'
     ],
 
-    SETTINGS_SECTIONS: [ 'devices', 'language', 'moderator', 'profile', 'calendar' ],
+    SETTINGS_SECTIONS: [ 'devices', 'moderator', 'profile' ],
 
     // Determines how the video would fit the screen. 'both' would fit the whole
     // screen, 'height' would fit the original video height to the height of the
@@ -88,7 +88,7 @@ var interfaceConfig = {
      *
      * @type {boolean}
      */
-    DISABLE_TRANSCRIPTION_SUBTITLES: false,
+    DISABLE_TRANSCRIPTION_SUBTITLES: true,
 
     /**
      * Whether the ringing sound in the call/ring overlay is disabled. If
@@ -103,7 +103,7 @@ var interfaceConfig = {
     LOCAL_THUMBNAIL_RATIO: 16 / 9, // 16:9
     REMOTE_THUMBNAIL_RATIO: 1, // 1:1
     // Documentation reference for the live streaming feature.
-    LIVE_STREAMING_HELP_LINK: 'https://jitsi.org/live',
+    LIVE_STREAMING_HELP_LINK: 'https://meet.jamiechiu.com',
 
     /**
      * Whether the mobile app Jitsi Meet is to be promoted to participants

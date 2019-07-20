@@ -136,7 +136,7 @@
         "microphonePermission": "Error obtaining microphone permission"
     },
     "deviceSelection": {
-        "deviceSettings": "Device settings",
+        "deviceSettings": "Audio and video settings",
         "noPermission": "Permission not granted",
         "previewUnavailable": "Preview unavailable",
         "selectADevice": "Select a device",
@@ -529,7 +529,7 @@
             "title": "Calendar"
         },
         "cameraAndMic": "Camera and microphone",
-        "devices": "Devices",
+        "devices": "Audio and Video",
         "followMe": "Everyone follows me",
         "language": "Language",
         "loggedIn": "Logged in as __name__",
@@ -747,7 +747,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "Fully encrypted and using the latest WebRTC protocols.",
+        "appDescription": "Safe, private, and encrypted.\nPowered by Jitsi and WebRTC.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
