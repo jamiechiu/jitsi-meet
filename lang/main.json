@@ -747,7 +747,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "Safe, private, and encrypted.\nPowered by Jitsi and WebRTC.",
+        "appDescription": "If you have trouble connecting, please contact Jamie, jamie@jamiechiu.com.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
