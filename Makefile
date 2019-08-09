@@ -15,7 +15,7 @@ WEBPACK_DEV_SERVER = ./node_modules/.bin/webpack-dev-server
 all: compile deploy clean
 
 compile:
-	$(WEBPACK) -p
+	$(WEBPACK) -p --progress --profile
 
 clean:
 	rm -fr $(BUILD_DIR)
