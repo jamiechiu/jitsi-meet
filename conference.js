@@ -78,10 +78,7 @@ import {
     setVideoAvailable,
     setVideoMuted
 } from './react/features/base/media';
-import {
-    hideNotification,
-    showNotification
-} from './react/features/notifications';
+import { showNotification } from './react/features/notifications';
 import {
     dominantSpeakerChanged,
     getLocalParticipant,
@@ -1348,8 +1345,7 @@ export default {
      * @returns {boolean}
      */
     isAudioOnly() {
-        return Boolean(
-            APP.store.getState()['features/base/conference'].audioOnly);
+        return Boolean(APP.store.getState()['features/base/audio-only'].enabled);
     },
 
     videoSwitchInProgress: false,
@@ -1798,30 +1794,12 @@ export default {
             APP.UI.setAudioLevel(id, newLvl);
         });
 
-        // we store the last start muted notification id that we showed,
-        // so we can hide it when unmuted mic is detected
-        let lastNotificationId;
-
         room.on(JitsiConferenceEvents.TRACK_MUTE_CHANGED, (track, participantThatMutedUs) => {
             if (participantThatMutedUs) {
                 APP.store.dispatch(participantMutedUs(participantThatMutedUs));
             }
-
-            if (lastNotificationId && track.isAudioTrack() && track.isLocal() && !track.isMuted()) {
-                APP.store.dispatch(hideNotification(lastNotificationId));
-                lastNotificationId = undefined;
-            }
         });
 
-        room.on(JitsiConferenceEvents.TALK_WHILE_MUTED, () => {
-            const action = APP.store.dispatch(showNotification({
-                titleKey: 'toolbar.talkWhileMutedPopup',
-                customActionNameKey: 'notify.unmute',
-                customActionHandler: muteLocalAudio.bind(this, false)
-            }));
-
-            lastNotificationId = action.uid;
-        });
         room.on(JitsiConferenceEvents.SUBJECT_CHANGED,
             subject => APP.store.dispatch(conferenceSubjectChanged(subject)));
 
@@ -2747,6 +2725,18 @@ export default {
                  * desktop screen.
                  */
                 convertVideoToDesktop: true,
+
+                /**
+                 * Callback invoked when the connection has been closed
+                 * automatically. Triggers cleanup of screensharing if active.
+                 *
+                 * @returns {void}
+                 */
+                onConnectionClosed: () => {
+                    if (this._untoggleScreenSharing) {
+                        this._untoggleScreenSharing();
+                    }
+                },
 
                 /**
                  * Callback invoked to pass messages from the local client back
