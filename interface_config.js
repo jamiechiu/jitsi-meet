@@ -11,11 +11,11 @@ var interfaceConfig = {
      */
     DISABLE_VIDEO_BACKGROUND: true,
 
-    INITIAL_TOOLBAR_TIMEOUT: 20000,
-    TOOLBAR_TIMEOUT: 4000,
+    INITIAL_TOOLBAR_TIMEOUT: 15000,
+    TOOLBAR_TIMEOUT: 3000,
     TOOLBAR_ALWAYS_VISIBLE: false,
-    DEFAULT_REMOTE_DISPLAY_NAME: 'Meeting Participant',
-    DEFAULT_LOCAL_DISPLAY_NAME: 'me',
+    DEFAULT_REMOTE_DISPLAY_NAME: 'Participant',
+    DEFAULT_LOCAL_DISPLAY_NAME: 'Me',
     SHOW_JITSI_WATERMARK: false,
     JITSI_WATERMARK_LINK: 'https://meet.jamiechiu.com',
 
@@ -28,9 +28,9 @@ var interfaceConfig = {
     GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
     DISPLAY_WELCOME_PAGE_CONTENT: false,
     DISPLAY_WELCOME_PAGE_TOOLBAR_ADDITIONAL_CONTENT: false,
-    APP_NAME: 'Meeting with Dr. Jamie Chiu',
-    NATIVE_APP_NAME: 'Meeting with Dr. Jamie Chiu',
-    PROVIDER_NAME: 'Meeting with Dr. Jamie Chiu',
+    APP_NAME: 'Private Video Therapy with Dr. Jamie Chiu',
+    NATIVE_APP_NAME: 'Private Video Therapy with Dr. Jamie Chiu',
+    PROVIDER_NAME: 'Private Video Therapy with Dr. Jamie Chiu',
     LANG_DETECTION: false, // Allow i18n to detect the system language
     INVITATION_POWERED_BY: false,
 
@@ -48,10 +48,9 @@ var interfaceConfig = {
      */
     TOOLBAR_BUTTONS: [
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
-        'fodeviceselection', 'hangup', 'profile', 'info', 'chat', 'recording',
-        'livestreaming', 'etherpad', 'sharedvideo', 'settings', 'raisehand',
-        'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
-        'tileview', 'videobackgroundblur', 'download', 'help'
+        'fodeviceselection', 'hangup', 'profile', 'info', 'chat',
+        'settings', 'raisehand', 'videoquality', 'filmstrip', 'feedback',
+        'tileview', 'download', 'help'
     ],
 
     SETTINGS_SECTIONS: [ 'devices', 'moderator', 'profile' ],
@@ -153,7 +152,7 @@ var interfaceConfig = {
      *
      * @type {boolean}
      */
-    CONNECTION_INDICATOR_DISABLED: false,
+    CONNECTION_INDICATOR_DISABLED: true,
 
     /**
      * If true, hides the video quality label indicating the resolution status
@@ -174,7 +173,7 @@ var interfaceConfig = {
     // has a suboptimal experience. Browsers which are not listed as optimal or
     // unsupported are considered suboptimal. Valid values are:
     // chrome, chromium, edge, electron, firefox, nwjs, opera, safari
-    OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'firefox', 'nwjs', 'electron' ],
+    OPTIMAL_BROWSERS: [ 'chrome' ],
 
     // Browsers, in addition to those which do not fully support WebRTC, that
     // are not supported and should show the unsupported browser page.

@@ -38,10 +38,9 @@ type Props = AbstractProps & {
  * @type {Object}
  */
 const RESOLUTION_TO_TRANSLATION_KEY = {
-    '1080': 'videoStatus.hd',
     '720': 'videoStatus.hd',
     '360': 'videoStatus.sd',
-    '180': 'videoStatus.ld'
+    '240': 'videoStatus.ld'
 };
 
 /**

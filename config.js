@@ -103,8 +103,8 @@ var config = {
             aspectRatio: 16 / 9,
             height: {
                 ideal: 720,
-                max: 1080,
-                min: 240
+                max: 720,
+                min: 360
             }
         }
     },
