@@ -14,6 +14,12 @@ import { AbstractWelcomePage, _mapStateToProps } from './AbstractWelcomePage';
 import Tabs from './Tabs';
 
 /**
+ * The pattern used to validate room name.
+ * @type {string}
+ */
+export const ROOM_NAME_VALIDATE_PATTERN_STR = '^[^?&:\u0022\u0027%#]+$';
+
+/**
  * The Web container rendering the welcome page.
  *
  * @extends AbstractWelcomePage
@@ -54,6 +60,17 @@ class WelcomePage extends AbstractWelcomePage {
          */
         this._additionalContentRef = null;
 
+        this._roomInputRef = null;
+
+        /**
+         * The HTML Element used as the container for additional toolbar content. Used
+         * for directly appending the additional content template to the dom.
+         *
+         * @private
+         * @type {HTMLTemplateElement|null}
+         */
+        this._additionalToolbarContentRef = null;
+
         /**
          * The template to use as the main content for the welcome page. If
          * not found then only the welcome page head will display.
@@ -64,11 +81,25 @@ class WelcomePage extends AbstractWelcomePage {
         this._additionalContentTemplate = document.getElementById(
             'welcome-page-additional-content-template');
 
+        /**
+         * The template to use as the additional content for the welcome page header toolbar.
+         * If not found then only the settings icon will be displayed.
+         *
+         * @private
+         * @type {HTMLTemplateElement|null}
+         */
+        this._additionalToolbarContentTemplate = document.getElementById(
+            'settings-toolbar-additional-content-template'
+        );
+
         // Bind event handlers so they are only bound once per instance.
         this._onFormSubmit = this._onFormSubmit.bind(this);
         this._onRoomChange = this._onRoomChange.bind(this);
         this._setAdditionalContentRef
             = this._setAdditionalContentRef.bind(this);
+        this._setRoomInputRef = this._setRoomInputRef.bind(this);
+        this._setAdditionalToolbarContentRef
+            = this._setAdditionalToolbarContentRef.bind(this);
         this._onTabSelected = this._onTabSelected.bind(this);
     }
 
@@ -90,6 +121,12 @@ class WelcomePage extends AbstractWelcomePage {
         if (this._shouldShowAdditionalContent()) {
             this._additionalContentRef.appendChild(
                 this._additionalContentTemplate.content.cloneNode(true));
+        }
+
+        if (this._shouldShowAdditionalToolbarContent()) {
+            this._additionalToolbarContentRef.appendChild(
+                this._additionalToolbarContentTemplate.content.cloneNode(true)
+            );
         }
     }
 
@@ -115,6 +152,7 @@ class WelcomePage extends AbstractWelcomePage {
         const { t } = this.props;
         const { APP_NAME } = interfaceConfig;
         const showAdditionalContent = this._shouldShowAdditionalContent();
+        const showAdditionalToolbarContent = this._shouldShowAdditionalToolbarContent();
 
         return (
             <div
@@ -125,6 +163,12 @@ class WelcomePage extends AbstractWelcomePage {
                     <div className = 'welcome-page-settings'>
                         <SettingsButton
                             defaultTab = { SETTINGS_TABS.CALENDAR } />
+                        { showAdditionalToolbarContent
+                            ? <div
+                                className = 'settings-toolbar-content'
+                                ref = { this._setAdditionalToolbarContentRef } />
+                            : null
+                        }
                     </div>
                     <div className = 'header-image' />
                     <div className = 'header-text'>
@@ -157,7 +201,9 @@ class WelcomePage extends AbstractWelcomePage {
     _onFormSubmit(event) {
         event.preventDefault();
 
-        this._onJoin();
+        if (!this._roomInputRef || this._roomInputRef.reportValidity()) {
+            this._onJoin();
+        }
     }
 
     /**
@@ -210,6 +256,31 @@ class WelcomePage extends AbstractWelcomePage {
     }
 
     /**
+     * Sets the internal reference to the HTMLDivElement used to hold the
+     * toolbar additional content.
+     *
+     * @param {HTMLDivElement} el - The HTMLElement for the div that is the root
+     * of the additional toolbar content.
+     * @private
+     * @returns {void}
+     */
+    _setAdditionalToolbarContentRef(el) {
+        this._additionalToolbarContentRef = el;
+    }
+
+    /**
+     * Sets the internal reference to the HTMLInputElement used to hold the
+     * welcome page input room element.
+     *
+     * @param {HTMLInputElement} el - The HTMLElement for the input of the room name on the welcome page.
+     * @private
+     * @returns {void}
+     */
+    _setRoomInputRef(el) {
+        this._roomInputRef = el;
+    }
+
+    /**
      * Returns whether or not additional content should be displayed below
      * the welcome page's header for entering a room name.
      *
@@ -221,6 +292,20 @@ class WelcomePage extends AbstractWelcomePage {
             && this._additionalContentTemplate
             && this._additionalContentTemplate.content
             && this._additionalContentTemplate.innerHTML.trim();
+    }
+
+    /**
+     * Returns whether or not additional content should be displayed inside
+     * the header toolbar.
+     *
+     * @private
+     * @returns {boolean}
+     */
+    _shouldShowAdditionalToolbarContent() {
+        return interfaceConfig.DISPLAY_WELCOME_PAGE_TOOLBAR_ADDITIONAL_CONTENT
+            && this._additionalToolbarContentTemplate
+            && this._additionalToolbarContentTemplate.content
+            && this._additionalToolbarContentTemplate.innerHTML.trim();
     }
 }
 
