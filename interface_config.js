@@ -47,10 +47,9 @@ var interfaceConfig = {
      * jwt.
      */
     TOOLBAR_BUTTONS: [
-        'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
-        'fodeviceselection', 'hangup', 'profile', 'info', 'chat',
-        'settings', 'raisehand', 'videoquality', 'filmstrip', 'feedback',
-        'tileview', 'download', 'help'
+        'microphone', 'camera', 'desktop', 'fullscreen',
+        'fodeviceselection', 'hangup', 'profile', 'chat',
+        'settings', 'filmstrip', 'tileview'
     ],
 
     SETTINGS_SECTIONS: [ 'devices', 'moderator', 'profile' ],
@@ -96,7 +95,7 @@ var interfaceConfig = {
      *
      * @type {boolean}
      */
-    DISABLE_RINGING: false,
+    DISABLE_RINGING: true,
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
     POLICY_LOGO: null,
@@ -145,7 +144,7 @@ var interfaceConfig = {
      *
      * @type {number}
      */
-    CONNECTION_INDICATOR_AUTO_HIDE_TIMEOUT: 5000,
+    CONNECTION_INDICATOR_AUTO_HIDE_TIMEOUT: 4000,
 
     /**
      * If true, hides the connection indicators completely.
