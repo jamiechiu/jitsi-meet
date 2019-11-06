@@ -3,7 +3,7 @@
 var interfaceConfig = {
     // TO FIX: this needs to be handled from SASS variables. There are some
     // methods allowing to use variables both in css and js.
-    DEFAULT_BACKGROUND: '#474747',
+    DEFAULT_BACKGROUND: '#227799',
 
     /**
      * Whether or not the blurred video background for large video should be
@@ -11,7 +11,7 @@ var interfaceConfig = {
      */
     DISABLE_VIDEO_BACKGROUND: true,
 
-    INITIAL_TOOLBAR_TIMEOUT: 15000,
+    INITIAL_TOOLBAR_TIMEOUT: 12000,
     TOOLBAR_TIMEOUT: 3000,
     TOOLBAR_ALWAYS_VISIBLE: false,
     DEFAULT_REMOTE_DISPLAY_NAME: 'Participant',

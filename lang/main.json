@@ -722,7 +722,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "If you have trouble connecting, please contact Jamie, jamie@jamiechiu.com.",
+        "appDescription": "If you have trouble connecting, please contact Jamie at jamie@jamiechiu.com",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
@@ -744,6 +744,6 @@
         "roomnameHint": "Enter the name or URL of the room you want to join. You may make a name up, just let the people you are meeting know it so that they enter the same name.",
         "sendFeedback": "Send feedback",
         "terms": "Terms",
-        "title": "Private Video Therapy with Dr. Jamie Chiu's"
+        "title": "Private Video Therapy with Dr. Jamie Chiu"
     }
 }
